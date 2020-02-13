@@ -97,10 +97,10 @@
       // }
       // return false;
 
-      var rowArray = this.rows();
+      // var rowArray = this.rows();
 
       for (var i = 0; i < rowArray.length; i++) {
-        if (rowArray[i] === rowIndex) {
+        if (rowArray[rowIndex][i] !== 0) {
           return true;
         }
       }
@@ -112,16 +112,28 @@
       // this.rows() = creates all rows in matrix
       // this.rows()[0] = first row; this.rows()[0][0] = first index of first row
 
-      var rowArray = this.rows();
+      // var rowArray = this.rows();
 
-      for (var i = 0; i < rowArray.length; i++) {
-        for (var j = 0; j < rowArray[i].length; j++) {
-          if (rowArray[i][j] !== 0) {
-            return true;
-          }
-        }
-      }
-      return false;
+      // for (var i = 0; i < rowArray.length; i++) {
+      //   for (var j = 0; j < rowArray[i].length; j++) {
+      //     if (rowArray[i][j] !== 0) {
+      //       return true;
+      //     }
+      //   }
+      // }
+      // return false;
+
+      // for (var i = 0; i < this.length; i++) {
+      // if (this.hasRowConflictAt(i)) {
+      //   return true;
+      // }
+
+      // for (var i = 0; i < rowArray.length; i++) {
+      //   if (rowArray.hasRowConflictAt(i)) {
+      //     return true;
+      //   }
+      // }
+      // return false;
     },
 
 
@@ -131,12 +143,20 @@
     //
     // test if a specific column on this board contains a conflict
     hasColConflictAt: function (colIndex) {
+
       return false; // fixme
     },
 
     // test if any columns on this board contain conflicts
     hasAnyColConflicts: function () {
-      return false; // fixme
+      // create variable to represent columns
+      // columns = rowArray[i] [j] --> i.e. first row at first index, second row at first index, etc etc = column one
+      // so need to run through each first index and then each second index to represent columns
+      // check if anything does not equal 0 therefore it has something on it
+
+      var rowArray = this.rows();
+
+      // return false; // fixme
     },
 
 
