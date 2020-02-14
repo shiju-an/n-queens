@@ -109,6 +109,9 @@
 
     hasAnyRowConflicts: function () {
       //iterates through each row and check if total value of the row > 1
+      if (this.get(0) === undefined) {
+        return false;
+      }
       for (var i = 0; i < this.get(0).length; i++) {
         var result = this.hasRowConflictAt(i);
         if (result) {
@@ -151,6 +154,9 @@
     //input n/a
 
     hasAnyColConflicts: function () {
+      if (this.get(0) === undefined) {
+        return false;
+      }
       //iterating through columns using the hascolconflict
       for (var i = 0; i < this.get(0).length; i++) {
         var result = this.hasColConflictAt(i);
@@ -231,7 +237,9 @@
       // insert that as parameter of the hmdca function
       // if true, return true
       // else false
-
+      if (this.get(0) === undefined) {
+        return false;
+      }
       var beginning = (this.get(0).length - 1) * -1;
       var end = this.get(0).length;
 
@@ -289,7 +297,9 @@
     hasAnyMinorDiagonalConflicts: function () {
       //create a beginning variable
       //create end variable
-
+      if (this.get(0) === undefined) {
+        return false;
+      }
       var beginning = 0;
       var end = (this.get(0).length - 1) * 2;
 
