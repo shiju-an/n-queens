@@ -20,7 +20,12 @@
 
     rows: function () {
       return _(_.range(this.get('n'))).map(function (rowIndex) {
+<<<<<<< HEAD
+=======
+        // range returns array that gets all numbers up to n board length
+>>>>>>> 2231588ab530ccb108234e1e0935ff5f1cb7d3e8
         return this.get(rowIndex);
+        // map returns row index of each square of the board
       }, this);
     },
 
@@ -63,11 +68,19 @@
 
 
     /*
+<<<<<<< HEAD
              _             _     _
          ___| |_ __ _ _ __| |_  | |__   ___ _ __ ___ _
         / __| __/ _` | '__| __| | '_ \ / _ \ '__/ _ (_)
         \__ \ || (_| | |  | |_  | | | |  __/ | |  __/_
         |___/\__\__,_|_|   \__| |_| |_|\___|_|  \___(_)
+=======
+         _             _     _
+     ___| |_ __ _ _ __| |_  | |__   ___ _ __ ___ _
+    / __| __/ _` | '__| __| | '_ \ / _ \ '__/ _ (_)
+    \__ \ || (_| | |  | |_  | | | |  __/ | |  __/_
+    |___/\__\__,_|_|   \__| |_| |_|\___|_|  \___(_)
+>>>>>>> 2231588ab530ccb108234e1e0935ff5f1cb7d3e8
 
      */
     /*=========================================================================
@@ -78,6 +91,7 @@
     // --------------------------------------------------------------
     //
     // test if a specific row on this board contains a conflict
+<<<<<<< HEAD
     //input - rowIndex (row 0, 1 , 2)
     //output - boolean
     //return true if row has conflict false otherwise
@@ -94,6 +108,29 @@
         total = total + row[i];
         //if the row has a value greater than 1 conflict is true, otherwise false;
         if (total > 1) {
+=======
+    hasRowConflictAt: function (rowIndex) {
+      // rows = returns [row index + board]
+      // input = array with row indexes
+      // output = boolean
+      // process = go through row array
+      // if this.rows(rowIndex) exsists
+      // has a row conflict at the row index
+      // otherwise the row index conflict does not exsist
+      // so it is false
+      // var rowArray = this.rows();
+      // for (var i = 0; i < rowArray.length; i++) {
+      //   if (rowArray[i] === rowIndex) {
+      //     return true;
+      //   }
+      // }
+      // return false;
+
+      // var rowArray = this.rows();
+
+      for (var i = 0; i < rowArray.length; i++) {
+        if (rowArray[rowIndex][i] !== 0) {
+>>>>>>> 2231588ab530ccb108234e1e0935ff5f1cb7d3e8
           return true;
         }
       }
@@ -101,6 +138,7 @@
     },
 
     // test if any rows on this board contain conflicts
+<<<<<<< HEAD
     //input
     //output boolean
     //constraints can't have an input
@@ -119,6 +157,34 @@
         }
       }
       return false;
+=======
+    hasAnyRowConflicts: function () {
+      // this.rows() = creates all rows in matrix
+      // this.rows()[0] = first row; this.rows()[0][0] = first index of first row
+
+      // var rowArray = this.rows();
+
+      // for (var i = 0; i < rowArray.length; i++) {
+      //   for (var j = 0; j < rowArray[i].length; j++) {
+      //     if (rowArray[i][j] !== 0) {
+      //       return true;
+      //     }
+      //   }
+      // }
+      // return false;
+
+      // for (var i = 0; i < this.length; i++) {
+      // if (this.hasRowConflictAt(i)) {
+      //   return true;
+      // }
+
+      // for (var i = 0; i < rowArray.length; i++) {
+      //   if (rowArray.hasRowConflictAt(i)) {
+      //     return true;
+      //   }
+      // }
+      // return false;
+>>>>>>> 2231588ab530ccb108234e1e0935ff5f1cb7d3e8
     },
 
 
@@ -129,6 +195,7 @@
     // --------------------------------------------------------------
     //
     // test if a specific column on this board contains a conflict
+<<<<<<< HEAD
     //input number
     //output boolean
     //input must be a number
@@ -152,6 +219,24 @@
 
     // test if any columns on this board contain conflicts
     //input n/a
+=======
+    hasColConflictAt: function (colIndex) {
+
+      return false; // fixme
+    },
+
+    // test if any columns on this board contain conflicts
+    hasAnyColConflicts: function () {
+      // create variable to represent columns
+      // columns = rowArray[i] [j] --> i.e. first row at first index, second row at first index, etc etc = column one
+      // so need to run through each first index and then each second index to represent columns
+      // check if anything does not equal 0 therefore it has something on it
+
+      var rowArray = this.rows();
+
+      // return false; // fixme
+    },
+>>>>>>> 2231588ab530ccb108234e1e0935ff5f1cb7d3e8
 
     hasAnyColConflicts: function () {
       if (this.get(0) === undefined) {
@@ -173,6 +258,7 @@
     //
     // test if a specific major diagonal on this board contains a conflict
     hasMajorDiagonalConflictAt: function (majorDiagonalColumnIndexAtFirstRow) {
+<<<<<<< HEAD
       //create total variable
       var total = 0;
       var col = 0;
@@ -197,6 +283,9 @@
         placeHolder++;
       }
       return false;
+=======
+      return false; // fixme
+>>>>>>> 2231588ab530ccb108234e1e0935ff5f1cb7d3e8
     },
     // check if input is positive or negative
     // if positive --> column is input and row is 0
@@ -223,6 +312,7 @@
 
     // test if any major diagonals on this board contain conflicts
     hasAnyMajorDiagonalConflicts: function () {
+<<<<<<< HEAD
       // use the hasmajordiagnoalconflict at function
       // takes one index parameter
       // use with loop
@@ -251,6 +341,9 @@
         }
       }
       return false;
+=======
+      return false; // fixme
+>>>>>>> 2231588ab530ccb108234e1e0935ff5f1cb7d3e8
     },
 
 
@@ -260,6 +353,7 @@
     //
     // test if a specific minor diagonal on this board contains a conflict
     hasMinorDiagonalConflictAt: function (minorDiagonalColumnIndexAtFirstRow) {
+<<<<<<< HEAD
       //check if input is greater than length
       //if input is greater than length -->
       var total = 0;
@@ -276,6 +370,9 @@
         }
       }
       return false;
+=======
+      return false; // fixme
+>>>>>>> 2231588ab530ccb108234e1e0935ff5f1cb7d3e8
     },
 
     // check if input is positive or negative
@@ -295,6 +392,7 @@
 
     // test if any minor diagonals on this board contain conflicts
     hasAnyMinorDiagonalConflicts: function () {
+<<<<<<< HEAD
       //create a beginning variable
       //create end variable
       if (this.get(0) === undefined) {
@@ -312,6 +410,10 @@
       }
       return false;
     },
+=======
+      return false; // fixme
+    }
+>>>>>>> 2231588ab530ccb108234e1e0935ff5f1cb7d3e8
 
     /*--------------------  End of Helper Functions  ---------------------*/
 
